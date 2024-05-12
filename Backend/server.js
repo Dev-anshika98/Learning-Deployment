@@ -1,41 +1,45 @@
 import express from 'express';
+// import cors from 'cors';
 
 const app = express();
 
-app.get('/', (req, res)=>{
-    res.send('Server is ready')
+// Enable CORS middleware
+// app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send('Server is ready');
 });
 
-//get a list of five jokes
-app.get('/jokes', (req,res) =>{
-    const jokes =[
+// Get a list of jokes
+app.get('/api/jokes', (req, res) => {
+    const jokes = [
         {
-            id:1,
+            id: 1,
             title: 'A joke',
             content: 'this is a joke'
         },
         {
-            id:1,
+            id: 2,
             title: 'A joke',
             content: 'this is a joke'
         },
         {
-            id:2,
+            id: 3,
             title: 'Another joke',
             content: 'this is a joke'
         },
         {
-            id:3,
+            id: 4,
             title: 'Another joke',
             content: 'this is a joke'
         },
         {
-            id:4,
+            id: 5,
             title: 'Another joke',
             content: 'this is a joke'
         },
         {
-            id:5,
+            id: 6,
             title: 'Another joke',
             content: 'this is a joke'
         },
@@ -45,6 +49,6 @@ app.get('/jokes', (req,res) =>{
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, () =>{
-    console.log(`Serve at  http://localhost:${port}`);
+app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
 });
